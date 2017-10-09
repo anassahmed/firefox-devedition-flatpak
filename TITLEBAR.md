@@ -21,34 +21,27 @@ connection speed).
 
 ### Wayland Version
 
-The `titlebar` branch doesn't have the `wayland` commits, so obviously it
+The `titlebar-csd` branch doesn't have the `wayland` commits, so obviously it
 doesn't work (if you can fork `stransky/gecko-dev` and merge the `titlebar`
 branch with `master` branch as the latter has the wayland commits, you're
 welcome).
 
 ## Normal Nightly Version
 
-The normal nightly has 2 issues:
-
-1. The CSD doesn't work!!
-
-2. It's confused with the main firefox app (if you've an already opened firefox
-   app, it will open a new window, so you should close all firefox instances
-   before using it.)
+It's confused with the main firefox app (if you've an already opened firefox
+app, it will open a new window, so you should close all firefox instances
+before using it.)
 
 ## Bundled Flatpaks
 
 The `./build.sh` scripts produces `*.flatpak` packages at the end, but they're
 not usable (at least for me) unless you provide `$GPG_BUNDLE_SETTINGS` as an
 environment variable for the script
-(I assume they're `--gpg-homedir <gpg-dir-path> --gpg-keys <key>`),
+(I assume they're `--gpg-homedir <gpg-dir-path> --gpg-keys <key>
+--gpg-sign=<key-fignerprint>`),
 you can read more about it in `man flatpak-build-bundle`.
 
-I don't have GPG keys right now, and the end result doesn't work with me, so I
-skipeed this part.
-
-However, if you have a way to install flatpak packages without GPG
-verification, please contract me. The binary bundles are available here:
+The binary bundles are available here:
 
 1. [Normal Nightly with Titlebar branch patches](https://www.dropbox.com/s/uso9f501d8bgxkx/org.mozilla.FirefoxNightlyTitlebar.flatpak?dl=0)
 
